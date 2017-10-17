@@ -3,18 +3,15 @@ CHANGELOG
 
 All changes to dotfiles are written here.
 
-## [0.0.0] 2111-11-11
+## [1.0.0] 2017-10-17
 
 ### Added
 
-- Everything added is described here.
-
-### Changed
-
-- All changes to existing items are describred here.
-
-### Removed
-
-- Every item removed should be described here.
-
-
+- ssh connection script
+    - scon: `scon sa` Will connecto to the server defined for "sa".
+- git flow feature shortcut scripts
+    - fstart: `fstart <FEATURE_NAME>´. Will create a new branch on feature/<FEATURE_NAME>.
+    - fpub: `fpub` Need to be on a feature branch. Will push then change to develop.
+- fh: `fh <TEXT>` Will search on command history for the text and show it on the screen.
+- gt: `gt code` Will cd into directory defined. Useful for cd'ng to common locations.
+-  
