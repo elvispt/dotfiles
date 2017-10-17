@@ -14,4 +14,4 @@ All changes to dotfiles are written here.
     - fpub: `fpub` Need to be on a feature branch. Will push then change to develop.
 - fh: `fh <TEXT>` Will search on command history for the text and show it on the screen.
 - gt: `gt code` Will cd into directory defined. Useful for cd'ng to common locations.
--  
+- Alias for listing running and stopped docker containers.
