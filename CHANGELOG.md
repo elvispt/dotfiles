@@ -3,6 +3,12 @@ CHANGELOG
 
 All changes to dotfiles are written here.
 
+## [1.1.0] 2017-11-22
+
+### Added
+
+- cext: `cext <EXTENSION>` Counts the number of files, of the given extension, inside the current directory, recursively.
+
 ## [1.0.0] 2017-10-17
 
 ### Added
