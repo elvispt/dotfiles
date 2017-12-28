@@ -38,6 +38,9 @@ function gt() {
     "code")
       cd ~/Documents/code/ && ls
     ;;
+    "down")
+      cd ~/Downloads && ls
+    ;;
     *)
       cd ~ && ls
   esac
@@ -75,3 +78,22 @@ connectTo() {
   esac
 }
 alias scon='connectTo'
+
+# get local ip and public ip
+ip() {
+  t=$1
+
+  case $t in
+    "-p")
+      curl ipecho.net/plain ; echo
+    ;;
+    "--help")
+      echo -e "\e[33m ip \e[0m - Show local ip address"
+      echo -e "\e[33m ip -p \e[0m - Show public ip address"
+    ;;
+    *)
+      ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}'
+  esac
+}
+alias ip='ip'
+
