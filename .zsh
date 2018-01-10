@@ -3,7 +3,7 @@
 # Simplified list of containers, both running and stopped
 alias 'dockerps'='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"'
 # Show a list of running containers with ID - NAME - IP
-alias 'dockerip'="docker ps -q | xargs docker inspect --format '{{ .Id }} - {{ .Name }} - {{ .NetworkSettings.IPAddress }}'"
+alias 'dockerip'="docker ps -q | xargs docker inspect --format '{{ .Id }} - {{ .Name }} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
 
 # Git flow related scripts
 featureStart() {
