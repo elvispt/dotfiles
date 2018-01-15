@@ -22,14 +22,6 @@ featurePublish() {
 alias fstart='featureStart'
 alias fpub='featurePublish'
 
-# Allows finding a string on command history file.
-# Uses ripgrep https://github.com/BurntSushi/ripgrep) instead of grep.
-# Replace rg for grep if dont want it.
-findInHistory() {
-  cat ~/.zsh_history | rg $1
-}
-alias fh='findInHistory'
-
 # shortcuts to common locations
 function gt() {
   target=$1;
