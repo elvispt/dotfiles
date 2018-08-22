@@ -37,3 +37,12 @@ ip() {
 }
 alias ip='ip'
 
+# Show hosts set on ssh config file
+alias 'ssh-hosts'='grep -w -i "Host" ~/.ssh/config | sed "s/Host//"'
+
+# A simple cli documentation generator
+# Idea from: https://news.ycombinator.com/item?id=17797355
+umedit() { mkdir -p ~/notes; vim ~/notes/"$1.md"; }
+um() { less ~/notes/"$1.md"; }
+umlist() { ls -1t ~/notes/ | sed 's/\..*$//'; }
+
