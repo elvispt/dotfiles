@@ -46,3 +46,4 @@ umedit() { mkdir -p ~/notes; vim ~/notes/"$1.md"; }
 um() { less ~/notes/"$1.md"; }
 umlist() { ls -1t ~/notes/ | sed 's/\..*$//'; }
 
+alias weather='curl wttr.in'
