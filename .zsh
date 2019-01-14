@@ -1,7 +1,7 @@
 # Most of these commands will work on most shells but they where tested and used on zsh
 
 # Simplified list of containers, both running and stopped
-alias 'dockerps'='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"'
+alias 'dockerps'='docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | sort'
 # Show a list of running containers with ID - NAME - IP
 #alias 'dockerip'="docker ps -q | xargs docker inspect --format '{{ .Id }} - {{ .Name }} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
 alias 'dockerip'="docker ps -q | xargs docker inspect --format '{{ .Id }} - {{ .Name }} - {{ .NetworkSettings.IPAddress }}'"
