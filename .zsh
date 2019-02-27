@@ -1,10 +1,26 @@
 # Most of these commands will work on most shells but they where tested and used on zsh
 
-# Simplified list of containers, both running and stopped
-alias 'dockerps'='docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | sort'
-# Show a list of running containers with ID - NAME - IP
-#alias 'dockerip'="docker ps -q | xargs docker inspect --format '{{ .Id }} - {{ .Name }} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
-alias 'dockerip'="docker ps -q | xargs docker inspect --format '{{ .Id }} - {{ .Name }} - {{ .NetworkSettings.IPAddress }}'"
+# docker helper command
+dps() {
+  t=$1
+
+  case $t in
+    "-a")
+      docker ps -a --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | sort
+    ;;
+    "--ip")
+      docker ps -q | xargs docker inspect --format '{{ .Id }} - {{ .Name }} - {{ .NetworkSettings.IPAddress }}'
+    ;;
+    "--help")
+      echo "Docker helper commands:"
+      echo "dps         Simplified list of **running** containers"
+      echo "dps -a      Simplified list of all containers"
+      echo "dps --ip    Show running containers with their assigned ips"
+    ;;
+    *)
+      docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" | sort
+  esac
+}
 
 # Count number of files with the given extension
 function countFilesByExtension() {
