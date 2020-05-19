@@ -1,5 +1,13 @@
 # Most of these commands will work on most shells but they where tested and used on zsh
 
+# list of alias commands
+als() {
+  echo "dps \t\t: Simplified list of **running** containers"
+  echo "cext \t\t: Number of files, of the given extension, inside the current directory, recursively"
+  echo "ip -p \t\t: Show public ipv4"
+  echo "ssh-hosts \t: Show hosts set on ssh config file"
+}
+
 # docker helper command
 dps() {
   t=$1
@@ -51,7 +59,6 @@ ip() {
       ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}'
   esac
 }
-alias ip='ip'
 
 # Show hosts set on ssh config file
 alias 'ssh-hosts'='grep -w -i "Host" ~/.ssh/config | sed "s/Host//"'
