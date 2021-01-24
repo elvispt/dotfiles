@@ -6,3 +6,10 @@ syntax on
 "virtually unfinite undo/redo (u/CTRL+r)
 set undofile
 set undodir=~/.vim/undodir
+
+set cursorline          " highlight current line
+set wildmenu            " visual autocomplete for command menu
+set showmatch           " highlight matching [{()}]
+
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
